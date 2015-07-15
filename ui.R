@@ -29,4 +29,7 @@ shinyUI(
       h4('Comparing your unique values to the prescribed formula, your UNR is:'), 
 
       verbatimTextOutput("estimation"),
-      p('Which means that you are:'),verbatimTextOutput("evaluation"))))
+      p('Which means that you are:'),verbatimTextOutput("evaluation"),
+      strong(p('Please visit https://github.com/itsaddison/DevelopingDataProducts to review code base.')),
+      tags$a(href="https://github.com/itsaddison/DevelopingDataProducts", "Github repository")
+      )))
