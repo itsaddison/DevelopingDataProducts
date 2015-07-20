@@ -3,14 +3,31 @@ shinyUI(
   pageWithSidebar(
     headerPanel("Are you on the path to self-actualization?"),
       sidebarPanel(
-      numericInput('age', 'Insert your age in Earth years', 18) ,
+      numericInput('age', 'Insert your age in Earth years', 0) ,
       numericInput('wisdomrating', 'Insert your wisdom rating, from 1-10,
       based on an honest self-assessment of your attained wisdom', 
-      5, min = 0, max = 10, step = 0.5),
+      0, min = 0, max = 10, step = 0.5),
       checkboxGroupInput("checkGroup", label = h3("Can you handle the truth?"), 
       choices = list("Yes", "No", "Hell No"), selected = 1),
       submitButton('Get my Nirvana Rating')), 
     mainPanel(
+      
+      tabsetPanel(
+        tabPanel('Documentation',
+                 h6('UNR is calculated by dividing wisdon rating by age, essentially y/x.
+                    
+                    A UNR < .2 indicates that you are screwed.
+                    A UNR >=.2 indicates that you are lying to yourself...there are no winners here.')
+        )
+      ),
+      
+      tabsetPanel(
+        tabPanel('Your Destiny',
+                 h5('')
+        )
+      ),
+      
+      
       p('Truth-seekers around the world want to know if they are on the path to Nirvana.
         Well, good news has arrived! This Shiny App was specifically designed with these
         human beings in mind. We can help you assess your Universal Nirvana Rating - UNR - 
